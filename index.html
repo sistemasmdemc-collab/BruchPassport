@@ -356,7 +356,7 @@ const LANDED=location.hash;
 const REWARDS=[[5,'Spa Experience','A restorative moment in our spa.'],[10,'Free Guest Pass','Bring someone to brunch, on us.'],[15,'Premium Wine Bottle','Selected by our sommelier.'],[20,'VIP Brunch Experience','Priority seating and a dedicated host.'],[25,'Executive Chef Private Table','A private table with the Executive Chef.']];
 const REFS=[[3,'Signature Cocktail'],[5,'20% Discount'],[10,'Free Brunch Invitation']];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-let M={name:'Julián Restrepo',first:'Julián',since:'March 2026',visits:7,refs:4,code:'BRUNCH-JULIAN-2026',last:'Sunday, Oct 4'};
+let M={name:'Name Last Name',first:'Name',since:'March 2026',visits:7,refs:4,code:'BRUNCH-NAME-2026',last:'Sunday, Oct 4'};
 if(!LIVE){try{const s=localStorage.getItem('bp_member');if(s)M=JSON.parse(s)}catch(e){}}
 const save=()=>{try{localStorage.setItem('bp_member',JSON.stringify(M))}catch(e){}};
 const fmt=n=>new Intl.NumberFormat('en-US').format(n);
