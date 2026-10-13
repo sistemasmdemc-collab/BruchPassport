@@ -606,7 +606,7 @@ function navUpdate(){
   $('#navJoin').textContent=li?'My passport':'Join the Club';
   $('#navJoin').setAttribute('href',li?'#member':'#join');
   $('#navStaff').classList.toggle('gone',!isStaff);
-  $('#navAdmin').classList.toggle('gone',LIVE?!isStaff:false);
+  $('#navAdmin').classList.toggle('gone',!isStaff:false);
 }
 async function refreshSession(){
   if(!LIVE)return;
