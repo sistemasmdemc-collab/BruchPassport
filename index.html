@@ -170,12 +170,12 @@ label{font-size:.85rem;font-weight:500;display:block;margin-bottom:.35rem}
             <p class="font-serif text-xl">Brunch Passport</p>
             <div class="rounded-2xl bg-pine text-cream p-4 relative overflow-hidden">
               <div class="absolute -right-6 -top-6 w-24 h-24 rounded-full border border-gold/40"></div>
-              <p class="text-[10px] tracking-[.2em] text-gold">MEMBER</p><p class="font-serif text-2xl leading-tight">Julián Restrepo</p>
+              <p class="text-[10px] tracking-[.2em] text-gold">MEMBER</p><p class="font-serif text-2xl leading-tight">Hotel Marriott</p>
               <div class="flex justify-between text-[11px] mt-3 text-cream/70"><span>7 of 25 visits</span><span>Next: Spa</span></div>
               <div class="h-1.5 rounded-full bg-cream/15 mt-1.5"><div class="h-full w-[28%] rounded-full bg-gold"></div></div>
             </div>
             <div id="phoneStamps" class="grid grid-cols-3 gap-2"></div>
-            <div class="mt-auto rounded-xl border border-pine/15 p-3 text-xs flex justify-between items-center"><span>Your code</span><b class="font-serif text-sm">BRUNCH-JULIAN-2026</b></div>
+            <div class="mt-auto rounded-xl border border-pine/15 p-3 text-xs flex justify-between items-center"><span>Your code</span><b class="font-serif text-sm">BRUNCH-MARRIOTT-2026</b></div>
           </div>
         </div>
       </div>
@@ -356,7 +356,7 @@ const LANDED=location.hash;
 const REWARDS=[[5,'Spa Experience','A restorative moment in our spa.'],[10,'Free Guest Pass','Bring someone to brunch, on us.'],[15,'Premium Wine Bottle','Selected by our sommelier.'],[20,'VIP Brunch Experience','Priority seating and a dedicated host.'],[25,'Executive Chef Private Table','A private table with the Executive Chef.']];
 const REFS=[[3,'Signature Cocktail'],[5,'20% Discount'],[10,'Free Brunch Invitation']];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-let M={name:'Julián Restrepo',first:'Julián',since:'March 2026',visits:7,refs:4,code:'BRUNCH-JULIAN-2026',last:'Sunday, Oct 4'};
+let M={name:'Hotel Marriott',first:'Hotel',since:'March 2026',visits:7,refs:4,code:'BRUNCH-MARRIOTT-2026',last:'Sunday, Oct 4'};
 if(!LIVE){try{const s=localStorage.getItem('bp_member');if(s)M=JSON.parse(s)}catch(e){}}
 const save=()=>{try{localStorage.setItem('bp_member',JSON.stringify(M))}catch(e){}};
 const fmt=n=>new Intl.NumberFormat('en-US').format(n);
@@ -547,7 +547,7 @@ function navUpdate(){
   $('#navJoin').textContent=li?'My passport':'Join the Club';
   $('#navJoin').setAttribute('href',li?'#member':'#join');
   $('#navStaff').classList.toggle('gone',!isStaff);
-  $('#navAdmin').classList.toggle('gone',!isStaff:false);
+  $('#navAdmin').classList.toggle('gone',!isStaff);
 }
 async function refreshSession(){
   if(!LIVE)return;
