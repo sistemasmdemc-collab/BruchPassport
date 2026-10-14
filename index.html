@@ -130,7 +130,7 @@ label{font-size:.85rem;font-weight:500;display:block;margin-bottom:.35rem}
 <rect x="134" y="366" width="32" height="15" rx="2.5" fill="none" stroke="#C8A76A" stroke-width="1"/><circle cx="150" cy="373.5" r="3.6" fill="none" stroke="#C8A76A" stroke-width="1"/>
 </svg></div>
       <div id="sOpen" class="sheet">
-        <div class="pgL"><svg viewBox="0 0 60 60" style="width:5.2em" aria-hidden="true"><circle cx="30" cy="30" r="27" fill="none" stroke="url(#gf)" stroke-width="1"/><text x="30" y="40" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="30" font-weight="600" fill="url(#gf)">M</text></svg><p style="font-size:.95em;letter-spacing:.35em;margin-top:.5em;color:#a98443">MARRIOTT</p>
+        <div class="pgL"><svg viewBox="0 0 60 60" style="width:5.2em" aria-hidden="true"><circle cx="30" cy="30" r="27" fill="none" stroke="url(#gf)" stroke-width="1"/><text x="30" y="40" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="30" font-weight="600" fill="url(#gf)">M</text></svg><p style="font-size:.95em;letter-spacing:.35em;margin-top:.5em;color:#a98443">MY</p>
           <h3 class="font-serif" style="font-size:2.7em;letter-spacing:.06em;margin-top:2.6em;line-height:1.1">BRUNCH PASSPORT</h3>
           <div style="width:6em;height:1px;background:#C8A76A;margin:1.8em 0"></div>
           <p style="font-size:1.05em;letter-spacing:.14em;line-height:1.8">A CULINARY JOURNEY<br>AROUND THE WORLD.</p>
@@ -170,12 +170,12 @@ label{font-size:.85rem;font-weight:500;display:block;margin-bottom:.35rem}
             <p class="font-serif text-xl">Brunch Passport</p>
             <div class="rounded-2xl bg-pine text-cream p-4 relative overflow-hidden">
               <div class="absolute -right-6 -top-6 w-24 h-24 rounded-full border border-gold/40"></div>
-              <p class="text-[10px] tracking-[.2em] text-gold">MEMBER</p><p class="font-serif text-2xl leading-tight">Hotel Marriott</p>
+              <p class="text-[10px] tracking-[.2em] text-gold">MEMBER</p><p class="font-serif text-2xl leading-tight">MY PASSPORT</p>
               <div class="flex justify-between text-[11px] mt-3 text-cream/70"><span>7 of 25 visits</span><span>Next: Spa</span></div>
               <div class="h-1.5 rounded-full bg-cream/15 mt-1.5"><div class="h-full w-[28%] rounded-full bg-gold"></div></div>
             </div>
             <div id="phoneStamps" class="grid grid-cols-3 gap-2"></div>
-            <div class="mt-auto rounded-xl border border-pine/15 p-3 text-xs flex justify-between items-center"><span>Your code</span><b class="font-serif text-sm">BRUNCH-MARRIOTT-2026</b></div>
+            <div class="mt-auto rounded-xl border border-pine/15 p-3 text-xs flex justify-between items-center"><span>Your code</span><b class="font-serif text-sm">BRUNCH-M-2026</b></div>
           </div>
         </div>
       </div>
@@ -188,7 +188,7 @@ label{font-size:.85rem;font-weight:500;display:block;margin-bottom:.35rem}
       <div id="homeRewards" class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-12"></div>
     </div>
   </section>
-  <footer class="py-10 text-center text-sm text-pine/60">Concept design · Marriott Brunch Passport</footer>
+  <footer class="py-10 text-center text-sm text-pine/60">Concept design · Brunch Passport</footer>
 </section>
 
 <!-- JOIN -->
@@ -207,7 +207,7 @@ label{font-size:.85rem;font-weight:500;display:block;margin-bottom:.35rem}
         <div><label for="co">Country</label><input id="co" value="Colombia" required></div>
         <div class="sm:col-span-2"><label for="ci">City</label><input id="ci" required value="Medellín"></div>
         <div class="sm:col-span-2"><label for="src">How did you hear about us?</label>
-          <select id="src" required><option value="">Select one</option><option>Instagram</option><option>Facebook</option><option>TikTok</option><option>Google</option><option>Marriott Bonvoy</option><option>Friend Recommendation</option><option>Corporate Event</option><option>Flyer</option><option>Hotel Guest</option><option>Walk-In</option><option>Other</option></select></div>
+          <select id="src" required><option value="">Select one</option><option>Instagram</option><option>Facebook</option><option>TikTok</option><option>Google</option><option>Telegram</option><option>Friend Recommendation</option><option>Corporate Event</option><option>Flyer</option><option>Hotel Guest</option><option>Walk-In</option><option>Other</option></select></div>
         <div class="sm:col-span-2"><label for="ref">Referral code (optional)</label><input id="ref" placeholder="BRUNCH-NAME-2026"></div>
         <div id="pwBox" class="sm:col-span-2 grid sm:grid-cols-2 gap-5"><div><label for="pw">Password</label><input id="pw" type="password" autocomplete="new-password" placeholder="At least 8 characters"></div><div><label for="pw2">Confirm password</label><input id="pw2" type="password" autocomplete="new-password"></div></div>
         <label class="sm:col-span-2 flex gap-3 items-start text-sm font-normal"><input id="ok" type="checkbox" class="!w-5 !h-5 !min-h-0 !p-0 mt-0.5 shrink-0"><span>I authorize the hotel to process my personal data for the Brunch Passport program, as described in the privacy policy.</span></label>
@@ -356,7 +356,7 @@ const LANDED=location.hash;
 const REWARDS=[[5,'Spa Experience','A restorative moment in our spa.'],[10,'Free Guest Pass','Bring someone to brunch, on us.'],[15,'Premium Wine Bottle','Selected by our sommelier.'],[20,'VIP Brunch Experience','Priority seating and a dedicated host.'],[25,'Executive Chef Private Table','A private table with the Executive Chef.']];
 const REFS=[[3,'Signature Cocktail'],[5,'20% Discount'],[10,'Free Brunch Invitation']];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-let M={name:'Hotel Marriott',first:'Hotel',since:'March 2026',visits:7,refs:4,code:'BRUNCH-MARRIOTT-2026',last:'Sunday, Oct 4'};
+let M={name:'MY PASSPORT',first:'MY',since:'March 2026',visits:7,refs:4,code:'BRUNCH-M-2026',last:'Sunday, Oct 4'};
 if(!LIVE){try{const s=localStorage.getItem('bp_member');if(s)M=JSON.parse(s)}catch(e){}}
 const save=()=>{try{localStorage.setItem('bp_member',JSON.stringify(M))}catch(e){}};
 const fmt=n=>new Intl.NumberFormat('en-US').format(n);
