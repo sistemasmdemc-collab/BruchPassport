@@ -297,8 +297,8 @@ label{font-size:.85rem;font-weight:500;display:block;margin-bottom:.35rem}
       <label for="sTema">Tema del brunch de hoy</label><select id="sTema"></select>
       <button id="scanBtn" class="btn btn-pine w-full mt-5">Escanear QR del miembro</button>
       <div id="reader"></div>
-      <label for="manual" class="mt-6">O pega el código del miembro</label>
-      <div class="flex flex-wrap gap-2"><input id="manual" autocomplete="off" class="!w-auto flex-1 min-w-[180px]"><button id="manualBtn" class="btn btn-gold !px-5">Sellar</button><button id="lookBtn" class="btn btn-pine !px-5">Consultar</button></div>
+      <label for="manual" class="mt-6">O pega el código del QR del miembro</label>
+      <div class="flex flex-wrap gap-2"><input id="manual" autocomplete="off" placeholder="Código largo del QR" class="!w-auto flex-1 min-w-[180px]"><button id="manualBtn" class="btn btn-gold !px-5">Sellar</button><button id="lookBtn" class="btn btn-pine !px-5">Consultar</button></div>
       <p id="sOut" class="mt-5 text-sm leading-relaxed" aria-live="polite"></p>
     </div>
   </div>
@@ -338,7 +338,7 @@ label{font-size:.85rem;font-weight:500;display:block;margin-bottom:.35rem}
           <h2 class="font-serif text-3xl">El próximo sello te espera el domingo.</h2>
           <p class="mt-3 text-pine/70 max-w-md">Cada visita suma a tu pasaporte. Si repites un destino, su sello muestra x2, x3... Usa el botón para ver cómo se estampa; en el hotel, tu anfitrión lo hace por ti.</p>
           <button id="addVisit" class="btn btn-pine mt-6">Ver un sello nuevo</button>
-          <div id="qrBox" class="mt-8 hidden glass-light rounded-2xl p-5 inline-flex items-center gap-5"><div id="qr" class="bg-cream p-2 rounded-lg"></div><div><p class="font-serif text-xl">Tu código de sello</p><p class="text-sm text-pine/65 max-w-[14rem]">Muéstralo a tu anfitrión en el brunch para recibir el sello del día.</p></div></div>
+          <div id="qrBox" class="mt-8 hidden glass-light rounded-2xl p-5 flex flex-wrap items-center gap-5 max-w-full"><div id="qr" class="bg-cream p-2 rounded-lg"></div><div><p class="font-serif text-xl">Tu código de sello</p><p class="text-sm text-pine/65 max-w-[14rem]">Muéstralo a tu anfitrión en el brunch para recibir el sello del día.</p><p id="qrCode" class="text-[11px] text-pine/60 mt-2 break-all select-all max-w-[14rem]"></p><button id="copyQr" type="button" class="text-sm underline min-h-[44px]">Copiar código</button> <span id="qrCopied" class="text-sm text-pine/70"></span></div></div>
         </div>
       </div>
     </div>
@@ -514,7 +514,7 @@ function renderMember(){
   const th=LIVE?(M.themes||[]):[['Colombia · Sabores & Brunch',72],['Italia · Dolce & Brunch',55],['Japón · Matcha & Brunch',38],['Francia · Pâtisserie & Brunch',24]];
   $('#themes').innerHTML=th.map(([n,v])=>`<div><div class="flex justify-between text-sm"><span>${esc(n)}</span><span>${v}%</span></div><div class="h-2 rounded-full bg-pine/10 mt-1"><div class="bar h-full rounded-full bg-gold th" data-w="${v}" style="width:0"></div></div></div>`).join('');
   $('#addVisit').classList.toggle('hidden',LIVE);$('#addRef').classList.toggle('hidden',LIVE);$('#qrBox').classList.toggle('hidden',!LIVE);
-  if(LIVE&&M.id){$('#qr').innerHTML='';try{new QRCode($('#qr'),{text:M.id,width:150,height:150,colorDark:'#173026',colorLight:'#F4F1E8'})}catch(e){}}
+  if(LIVE&&M.id){$('#qrCode').textContent=M.id;$('#qr').innerHTML='';try{new QRCode($('#qr'),{text:M.id,width:150,height:150,colorDark:'#173026',colorLight:'#F4F1E8'})}catch(e){}}
   if(tab==='dash')animDash();
 }
 function animDash(){setTimeout(()=>{$('#ring').style.strokeDashoffset=327*(1-window._ringPct);$$('.th').forEach(b=>b.style.width=b.dataset.w+'%')},150)}
@@ -523,6 +523,7 @@ $('#cover').addEventListener('click',openBook);
 $('#cover').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openBook()}});
 $('#addVisit').addEventListener('click',()=>{if(LIVE||M.visits>=25)return;M.visits++;M.last='Hoy';save();if(!opened){opened=true}renderMember();$('#book').classList.add('open')});
 $('#addRef').addEventListener('click',()=>{if(LIVE)return;M.refs++;save();renderMember()});
+$('#copyQr').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(M.id);$('#qrCopied').textContent='Código copiado'}catch(e){$('#qrCopied').textContent='Mantén presionado el código para copiarlo'}});
 $('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(M.code);$('#copied').textContent='Código copiado'}catch(e){$('#copied').textContent='Selecciona y copia el código de arriba'}});
 
 /* admin */
